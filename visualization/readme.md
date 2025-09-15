@@ -11,3 +11,5 @@
 (5) line 849-->855处，储存可视化结果
 
 `add_subimage_temps`函数在文件`myvisual.py`中定义
+
+当前目录下的png图片展示可视化结果
