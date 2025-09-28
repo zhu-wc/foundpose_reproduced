@@ -1,3 +1,5 @@
+### 介绍
+
 调整视觉词坐标的计算方案，使用与其关联patch在x和y轴上坐标的中位数作为视觉词的坐标。（之前的方案为计算均值）
 
 计算中位数的代码如下：
@@ -19,3 +21,7 @@
     all_words_pos_x = torch.zeros(2048).to(query_points.device).scatter_add_(dim=0, index=unique_words_index,src=x_list).unsqueeze(-1)
     all_words_pos_y = torch.zeros(2048).to(query_points.device).scatter_add_(dim=0, index=unique_words_index,src=y_list).unsqueeze(-1)
 ```
+
+### 性能
+
+姿态估计性能为35.8%，未及坐标均值方案的36.1%
